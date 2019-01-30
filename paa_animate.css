@@ -4,8 +4,8 @@
    Case Problem 3
 
    Pixal Arts and Entertainment Animation Styles
-   Author: 
-   Date:   
+   Author: Dajah Medina
+   Date:   1.29.19
 
    Filename: 
    
@@ -20,7 +20,11 @@
 
 
 /* Transition Effects */
-
+nav#gameLinks {
+    position: relative;
+    color: white;
+    transition: 0.5
+}
 
 
 
@@ -30,4 +34,3 @@
 
 
 /* Animation Styles */
-
