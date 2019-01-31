@@ -23,7 +23,29 @@
 nav#gameLinks {
     position: relative;
     color: white;
-    transition: 0.5
+    transition: 0.5s;
+}
+
+nav#gameLinks a:hover {
+    color: rgb(255, 194, 99);
+}
+
+nav#gameLinks a::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 0%;
+    height: 8px;
+    border-radius: 4px;
+    background: linear-gradient((237, 243, 71) (188, 74, 0) right);
+    opacity: 0;
+    transform: 0.5s;
+}
+
+nav#gameLinks a:hover::after {
+    opacity: 1;
+    width: 100%;
 }
 
 
