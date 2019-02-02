@@ -20,10 +20,12 @@
 
 
 /* Transition Effects */
-nav#gameLinks {
+/* I gave the nav and id of gameLinks to target each one also put an a tag. I then positioned it and gave the nav text a color of white with a transition color to change different color within a certain amount  of time. I then gave the nav the same id and a tag along 
+with it, but I also gave it a pusdeo class of hover so each time the user hovers over the text for the nav,  it will then change a different color that was set with an rgb. Using the same nav and id and a tag, I gave it a pseudo class of after and then gave it the styles for each one. This time there is a transition with an opacity and a width with different times in seconds. For the next selector I used, I used the same nav and id and a tag, but gave the a tag a psesudo class of bothe hover and after to combine the two parts with the same opaciity and width.  */
+nav#gameLinks a {
     position: relative;
     color: white;
-    transition: 0.5s;
+    transition: color 0.5s;
 }
 
 nav#gameLinks a:hover {
@@ -37,10 +39,10 @@ nav#gameLinks a::after {
     left: 0px;
     width: 0%;
     height: 8px;
+    background: linear-gradient(to right, rgb(237, 243, 71), rgb(188, 74, 0));
     border-radius: 4px;
-    background: linear-gradient((237, 243, 71) (188, 74, 0) right);
     opacity: 0;
-    transform: 0.5s;
+    transition: opacity 0.5s, width 0.5s;
 }
 
 nav#gameLinks a:hover::after {
@@ -51,6 +53,7 @@ nav#gameLinks a:hover::after {
 
 
 /* Sprite Styles */
+/* First, for the div element I gave it a class of sprite to target multiple elements and gave it a position.  */
 div.sprite {
     position: absolute;
 }
@@ -58,8 +61,11 @@ div.sprite {
 div#bat {
     width: 40px;
     height: 50px;
-    background: url(paa_bat.png) left no-repeat;
-    top: 100px -50px;
+    background: url(paa_bat.png) left center no-repeat;
+    background-size: cover;
+    top: 100px;
+    left: -50px;
+    animation: playSprite 2s steps(39)infinite, flyRight 8s linear infinite;
 }
 
 div#butterfly {
@@ -67,7 +73,9 @@ div#butterfly {
     height: 35px;
     top: 60px;
     left: -50px;
-    background: url(paa_bfly.png) left center/ cover no-repeat;
+    background: url(paa_bfly.png) left center no-repeat;
+    background-size: cover;
+    animation: playSprite 1s 3s steps(33) infinite, flyRight 6s cubic-bezier(0, 1, 0.73, 0) infinite;
 }
 
 div#fox {
@@ -75,10 +83,38 @@ div#fox {
     height: 260px;
     bottom: 10px;
     right: 10px;
-    background: url(paa_fox.png) left center/ cover no-repeat;
+    background: url(paa_fox.png) left center no-repeat;
+    background-size: cover;
+    animation: playSprite 3.5s 4s steps(27) infinite;
 }
 
 /* Animation Styles */
 @keyframes playSprite {
-    position: right;
+    100% {
+        background-position: right center;
+    }
+}
+
+@keyframes flyRight {
+    25% {
+        top: 150px;
+    }
+
+    50% {
+        top: 55px;
+    }
+
+    65% {
+        top: 120px;
+    }
+
+    90% {
+        top: 50px;
+    }
+
+    100% {
+        top: 80px;
+        left: 100%;
+    }
+
 }
