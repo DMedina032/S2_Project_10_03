@@ -7,11 +7,11 @@
    Author: Dajah Medina
    Date:   1.29.19
 
-   Filename: 
-   
-   Sprite animation is created using the paa_bat.png, 
+   Filename: paa_animate.css
+
+   Sprite animation is created using the paa_bat.png,
    paa_bfly.png, and paa_fox.png image files.
-   
+
    paa_bat.png has 40 frames
    paa_bfly.png has 34 frames
    paa_fox.png has 28 frames
@@ -20,7 +20,7 @@
 
 
 /* Transition Effects */
-/* I gave the nav and id of gameLinks to target each one also put an a tag. I then positioned it and gave the nav text a color of white with a transition color to change different color within a certain amount  of time. I then gave the nav the same id and a tag along 
+/* I gave the nav and id of gameLinks to target each one also put an a tag. I then positioned it and gave the nav text a color of white with a transition color to change different color within a certain amount  of time. I then gave the nav the same id and a tag along
 with it, but I also gave it a pusdeo class of hover so each time the user hovers over the text for the nav,  it will then change a different color that was set with an rgb. Using the same nav and id and a tag, I gave it a pseudo class of after and then gave it the styles for each one. This time there is a transition with an opacity and a width with different times in seconds. For the next selector I used, I used the same nav and id and a tag, but gave the a tag a psesudo class of bothe hover and after to combine the two parts with the same opaciity and width.  */
 nav#gameLinks a {
     position: relative;
@@ -53,7 +53,9 @@ nav#gameLinks a:hover::after {
 
 
 /* Sprite Styles */
-/* First, for the div element I gave it a class of sprite to target multiple elements and gave it a position.  */
+/* First, for the div element I gave it a class of sprite to target multiple elements and gave it a position.I put the divs for the
+bat, butterfly, and the fox along with thier id of their name. I then gave each one a different width, hieght, and background for when they appear of the web page.
+I animation is for each character to move at differnt time intervals and gave them a the same name with an infinite movement.  */
 div.sprite {
     position: absolute;
 }
@@ -89,6 +91,8 @@ div#fox {
 }
 
 /* Animation Styles */
+/* I gave each part a @keyframes with different names like playSprite and flyRight. For the playSprite I gave it a background-position
+fot the two animations. For the flyRightI gave each part an individual effect by percentages.  */
 @keyframes playSprite {
     100% {
         background-position: right center;
